@@ -5,11 +5,6 @@ import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { readFile } from 'fs/promises';
 import "dotenv/config";
 
-
-const combineDocuments = (docs) => {
-    return docs.map(doc => doc.pageContent).join('\n\n');
-}
-
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_API_KEY = process.env.SUPABASE_API_KEY;
 

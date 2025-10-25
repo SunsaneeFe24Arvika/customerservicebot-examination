@@ -1,0 +1,4 @@
+{
+    "name" : "@chatbot-app/retriever",
+    "main" : "index.js"
+}
