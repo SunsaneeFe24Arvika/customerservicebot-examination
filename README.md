@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Individuell examination - Kundtjänstbot TechNova AB
 
 ## Instruktioner
