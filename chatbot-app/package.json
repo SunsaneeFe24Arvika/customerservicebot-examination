@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chatbot/core": "*",
     "@langchain/community": "^0.3.57",
     "@langchain/core": "^0.3.77",
     "@langchain/nomic": "^0.1.0",
