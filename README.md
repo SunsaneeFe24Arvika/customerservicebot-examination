@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Individuell examination - Kundtjänstbot TechNova AB
 
 ## Instruktioner
@@ -36,3 +37,7 @@ Assistenten ska kunna svara på kundfrågor om produkter, leveranser och garanti
 
 ## Inlämning
 Deadline för ditt projekt är torsdagen den 30/11 kl 23:59. På fredagen kommer var och en av er få boka in 10 minuter med mig där ni visar att er bot fungerar, samt får svara på frågor som visar att ni förstår den kod och det program ni lämnar in. Bokningslänken [hittar ni här](https://docs.google.com/spreadsheets/d/1gLFPJlRjzDow1DDcmUMHVCN5risja5GACFnJyoVJepI/edit?usp=sharing). Därefter får du göra justeringar fram till inlämning som sker på Azomo med en länk till ditt Github repo med din kod senast **31/10 kl 23:59**. I ditt repo vill jag att du också har med en screenshot på din tabell i Supabase för sparandet av textfilen.
+=======
+# kundtjänstbot-examination
+Individuell examination - Kundtjänstbot TechNova AB
+>>>>>>> c8e46aa6a59086d112f5549595977a21a31fe90c
