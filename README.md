@@ -1,2 +1,2 @@
-# kundtj-nstbot-examination
+# kundtjänstbot-examination
 Individuell examination - Kundtjänstbot TechNova AB
