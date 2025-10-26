@@ -1,0 +1,4 @@
+{
+    "name" : "@chatbot-app/message",
+    "main" : "index.js"
+}
