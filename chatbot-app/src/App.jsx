@@ -1,4 +1,4 @@
-import { ChatPage } from "@chatapp/chatpage"
+import { ChatPage } from "@chatbot-app/chatpage"
 
 function App() {
 
