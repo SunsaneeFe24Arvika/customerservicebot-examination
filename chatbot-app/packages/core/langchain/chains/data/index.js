@@ -1,10 +1,9 @@
 import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 import { retriever } from "@chatbot-app/retriever";
 import { standaloneQuestionTemplate, answerTemplate } from "@chatbot-app/templates";
-import { combineDocuments } from "@chatbot-app/combinedocuments";
 import { llm } from "@chatbot-app/llm";
 import { StringOutputParser } from "@langchain/core/output_parsers";
-import { BufferMemory } from "lnagchain/memory";
+import { BufferMemory } from "langchain/memory";
 import { ConversationChain } from "langchain/chains";
 
 const memory = new BufferMemory({
@@ -27,12 +26,13 @@ const retrieverChain = RunnableSequence.from([
         return data.standaloneQuestion
     },
     retriever,
-    combineDocuments
+   
+    (docs) => docs.map(doc => doc.pageContent).join('\n\n')
 ]);
 
 const conversationChain = new ConversationChain({
     llm,
-    promt : answerTemplate,
+    prompt: answerTemplate,
     memory
 });
 
