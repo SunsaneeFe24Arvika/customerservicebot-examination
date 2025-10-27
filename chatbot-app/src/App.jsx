@@ -1,10 +1,10 @@
-import { ChatPage } from "@chatbot-app/chatpage"
+import { StarPage } from "@chatbot-app/startpage"
 
 function App() {
 
   return (
     <section className="app">
-      <ChatPage />
+      <StarPage />
     </section>
   )
 }

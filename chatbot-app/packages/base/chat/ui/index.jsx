@@ -2,8 +2,7 @@ import './index.css';
 import { Message } from '@chatbot-app/message';
 import { Loading } from '@chatbot-app/loading';
 import { useChatLogic } from '@chatbot-app/useChat';
-
-
+import { IoIosPaperPlane } from "react-icons/io";
 
 export const Chat = () => {
     const { messages, loading, handleSubmit, inputRef } = useChatLogic();
@@ -22,7 +21,9 @@ export const Chat = () => {
             <form className="chat__form" onSubmit={handleSubmit}>
                 <input type="text" className="chat__input" ref={inputRef} />
                 <button className="chat__btn">
-                    Skicka
+                    <i className="chat-icon">
+                        <IoIosPaperPlane />
+                    </i>                     
                 </button>
             </form>
         </section>

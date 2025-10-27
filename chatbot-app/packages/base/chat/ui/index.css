@@ -1,6 +1,5 @@
 .chat {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem;
     text-align: center;
 
@@ -51,4 +50,7 @@
             transform: scale(0.98);
         }
     }
+}
+.chat-icon {
+    font-size: 32px;
 }
