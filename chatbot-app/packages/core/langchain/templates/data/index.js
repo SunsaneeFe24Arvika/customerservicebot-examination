@@ -24,7 +24,7 @@ export const answerTemplate = ChatPromptTemplate.fromMessages([
         Dina huvuduppgifter:
         - Svara vänligt, tydligt och professionellt
         - Använd endast information från den tillhandahållna kontexten
-        - Om du inte har tillräcklig information, erkänn det och föreslå hur kunden kan få mer hjälp
+        - Om du inte har tillräcklig information, erkänn det och föreslå hur kunden kan få mer hjälp med att kontakta vår kundtjänst via e-post "support@technova.se"
         - Fokusera på att lösa kundens problem eller besvara deras frågor
         - Håll svaren koncisa men fullständiga
         
