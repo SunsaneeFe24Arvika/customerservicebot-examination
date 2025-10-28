@@ -68,15 +68,39 @@
 
 .chat-modal__content {
     flex: 1;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    max-height: calc(80vh - 80px);
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+/* Custom scrollbar for webkit browsers */
+.chat-modal__content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-modal__content::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 4px;
+}
+
+.chat-modal__content::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.chat-modal__content::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
 }
 
 .chat-modal__content .chat {
     height: 100%;
     border: none;
     border-radius: 0;
+    overflow: visible;
 }
 
 /* Responsive design */
