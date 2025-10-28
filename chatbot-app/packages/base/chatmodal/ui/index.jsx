@@ -15,7 +15,7 @@ export const ChatModal = ({ isOpen, onClose }) => {
         <div className="chat-modal-backdrop" onClick={handleBackdropClick}>
             <div className="chat-modal">
                 <div className="chat-modal__header">
-                    <h3>Chatta med oss</h3>
+                    <h3>Chatta med Novis</h3>
                     <button 
                         className="chat-modal__close-btn" 
                         onClick={onClose}
