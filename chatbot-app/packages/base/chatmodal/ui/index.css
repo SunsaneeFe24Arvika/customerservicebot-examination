@@ -106,7 +106,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
     .chat-modal {
-        max-width: 95vw;
+        max-width: 130vw;
         max-height: 90vh;
         margin: 10px;
     }
