@@ -15,4 +15,24 @@ const vectorstore = new SupabaseVectorStore(
     }
 );
 
+// Standard retriever
 export const retriever = vectorstore.asRetriever();
+
+// Språkspecifik retriever 
+export const getLanguageSpecificRetriever = (language) => {
+    // Skapa en ny vectorstore för varje språk
+    const languageVectorstore = new SupabaseVectorStore(
+        embeddings, 
+        {
+            client: client,
+            tableName: 'documents',
+            queryName: 'match_documents'
+        }
+    );
+    
+    // Returnera retriever med språkfilter
+    return languageVectorstore.asRetriever({
+        k: 4,
+        filter: { language: language }
+    });
+};

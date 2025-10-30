@@ -43,6 +43,7 @@
 
         .chat__input {
             flex: 5;
+            font-size: 16px;
             padding: 1rem;
             border: 2px solid #ccc;
             border-radius: 25px;
@@ -57,9 +58,8 @@
 
         .chat__btn {
             flex: 1;
-            padding: 1rem;
             border-radius: 25px;
-            background-color: #7b68ee;
+            background: linear-gradient(135deg, #4A90E2, #7ED321);
             color: white;
             border: none;
             cursor: pointer;

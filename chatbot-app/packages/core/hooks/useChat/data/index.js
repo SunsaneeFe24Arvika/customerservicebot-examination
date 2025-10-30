@@ -1,8 +1,18 @@
 import { useState, useRef } from "react";
 import { chain } from '@chatbot-app/chains';
 
-export const useChatLogic = () => {
-    const [messages, setMessages] = useState([]);
+export const useChatLogic = (showWelcome = false) => {
+    // Initial state - smart välkomstmeddelande
+    const [messages, setMessages] = useState(() => {
+        if (showWelcome) {
+            return [{
+                text: "Hej och välkommen till vår Novis AI! Vad kan vi hjälpa dig med idag?",
+                role: "Novis"
+            }];
+        }
+        return [];
+    });
+    
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
 
@@ -24,5 +34,16 @@ export const useChatLogic = () => {
         setLoading(false);
     };
 
-    return { messages, loading, handleSubmit, inputRef };
-}
+    const clearMessages = () => {
+        if (showWelcome) {
+            setMessages([{
+                text: "Hej och välkommen till vår Novis AI! Vad kan vi hjälpa dig med idag?",
+                role: "Novis"
+            }]);
+        } else {
+            setMessages([]);
+        }
+    };
+
+    return { messages, loading, handleSubmit, inputRef, clearMessages };
+};

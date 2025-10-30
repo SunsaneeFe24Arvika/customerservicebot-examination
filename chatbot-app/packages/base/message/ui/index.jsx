@@ -10,6 +10,5 @@ export const Message = ({ text, role }) => {
                 </p>
             </section>
         </article>
-
     )
 }
