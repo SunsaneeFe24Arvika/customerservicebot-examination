@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { chain } from '@chatbot-app/chains';
 
 export const useChatLogic = (showWelcome = false) => {
-    // Initial state - smart välkomstmeddelande
+    // Välkomstmeddelande
     const [messages, setMessages] = useState(() => {
         if (showWelcome) {
             return [{

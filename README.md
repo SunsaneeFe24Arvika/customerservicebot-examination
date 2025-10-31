@@ -13,27 +13,14 @@ Assistenten ska kunna svara på kundfrågor om produkter, leveranser och garanti
 * Kundtjänstboten ska ifall den använder information från företagets FAQ- och policydokument för att svara på kundens fråga visa i sitt svar vilka delar från företagets FAQ- och policydokument som ligger till grund för detta svar.
 * Kundtjänstboten ska enbart kunna svara på frågor om TechNova AB, produkter, leveranser, garantier samt info från företagets FAQ-och policydokument. Det ska alltså inte kunna gå och fråga "Vad är Javascript?", då ska ett vänligt svar ges att jag kan inte svara på en sådan fråga.
 
-## Tekniska krav
+## Extra funktioner
+*Embedding model med Nomic
+  - Jag valde att använda "nomic-embed-text:" istället för "llama3.1:8b" eftersom den visade sig vara mer effektiv och stabil för att omvandla text till vektorer.
 
-**Du kan bygga denna examination antingen som enbart en React-app (och då med `npm i @langchain/core@0.3.77 @langchain/community@0.3.57`) eller som en fullstack-applikation då Langchain.js istället finns i ett Express.js API.**
+*Language-validator
+  - Jag skapade en språkvalideringsfunktion så att AI-agenten skulle kunna identifiera vilket språk den skulle svara på. Funktionen fångar upp vanliga ord på svenska och engelska som jag hade definierat för kontrollen. Den räknar sedan ut matchningen och jämför vilket språk som förekommer mest, och AI:n svarar på det dominerande språket.
 
-* React
-* Langchain.js
-  - PromptTemplates (och eller ChatPromptTemplates)
-  - RunnableSequence (med eller utan RunnablePassThrough)
-  - Retreiver-funktion för Vektordatabasen
-* Ollama
-* Supabase
+*AnswerTemplate på olika språk
+  - För att min AI skulle kunna svara på rätt språk behövde jag skapa en answerTemplate för både svenska och engelska, samt en info.txt på engelska, så att AI:n kunde hitta rätt språk att svara på. Jag använde answerTemplate i den andra kedjefunktionen (rad 103 i koden: chain → data → index.js). Efter att den första kedjefunktionen identifierar input.language, skickas värdet vidare till den andra kedjefunktionen som avgör vilken answerTemplate som ska användas för svaret.
 
-## Betygskriterier
-
-**För Godkänt:**
-* Uppfyller alla funktionella och tekniska krav
-
-**För Väl Godkänt:**
-* Du ska ha delat upp din kod så att Langchain.js är skilt från dina React-komponenter (alltså egna JS-filer för kedjor, templates etc).
-* Du ska ha implementerat en passande funktion som finns i Langchain.js som inte har gåtts igenom under kursen (här får du läsa dokumentationen och välja fritt). Skriv några rader i din README varför du valde just denna funktion.
-
-## Inlämning
-Deadline för ditt projekt är torsdagen den 30/11 kl 23:59. På fredagen kommer var och en av er få boka in 10 minuter med mig där ni visar att er bot fungerar, samt får svara på frågor som visar att ni förstår den kod och det program ni lämnar in. Bokningslänken [hittar ni här](https://docs.google.com/spreadsheets/d/1gLFPJlRjzDow1DDcmUMHVCN5risja5GACFnJyoVJepI/edit?usp=sharing). Därefter får du göra justeringar fram till inlämning som sker på Azomo med en länk till ditt Github repo med din kod senast **31/10 kl 23:59**. I ditt repo vill jag att du också har med en screenshot på din tabell i Supabase för sparandet av textfilen.
-
+![supabase](image.png)
