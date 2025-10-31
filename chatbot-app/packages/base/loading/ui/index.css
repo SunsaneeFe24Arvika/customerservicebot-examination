@@ -1,0 +1,57 @@
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    color: #4A90E2;
+    padding-left: 20px;
+}
+
+.loading-icon {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-icon > * {
+    position: absolute;
+    opacity: 0;
+    animation: iconCycle 3.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 28px;
+    will-change: transform, opacity;
+}
+
+/* Each icon shows for exactly 0.6s with NO overlap */
+.loading-icon > *:nth-child(1) { animation-delay: 0s; }
+.loading-icon > *:nth-child(2) { animation-delay: 0.6s; }
+.loading-icon > *:nth-child(3) { animation-delay: 1.2s; }
+.loading-icon > *:nth-child(4) { animation-delay: 1.8s; }
+.loading-icon > *:nth-child(5) { animation-delay: 2.4s; }
+.loading-icon > *:nth-child(6) { animation-delay: 3s; }
+
+@keyframes iconCycle {
+    0%, 83.33% {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.5);
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+    11.66% {
+        opacity: 1;
+        transform: translateX(20px) scale(1);
+    }
+    16.66% {
+        opacity: 0;
+        transform: translateX(40px) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.5);
+    }
+}
