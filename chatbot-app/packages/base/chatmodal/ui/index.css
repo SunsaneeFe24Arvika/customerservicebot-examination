@@ -16,9 +16,9 @@
     background: white;
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
-    max-height: 80vh;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -47,7 +47,7 @@
 
 .chat-modal__header h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 600;
 }
 
@@ -72,7 +72,7 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    max-height: calc(80vh - 80px);
+    max-height: calc(90vh - 80px);
     scrollbar-width: thin;
     scrollbar-color: #cbd5e0 #f7fafc;
 }
@@ -106,8 +106,8 @@
 /* Responsive design */
 @media (max-width: 768px) {
     .chat-modal {
-        max-width: 130vw;
-        max-height: 90vh;
+        max-width: 95vw;
+        max-height: 95vh;
         margin: 10px;
     }
     

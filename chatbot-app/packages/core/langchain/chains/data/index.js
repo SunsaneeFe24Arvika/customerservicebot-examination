@@ -1,6 +1,6 @@
-import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
+import { RunnableSequence } from "@langchain/core/runnables";
 import { retriever } from "@chatbot-app/retriever";
-import { standaloneQuestionTemplate, answerTemplate, languageDetectionTemplate } from "@chatbot-app/templates";
+import { standaloneQuestionTemplate, answerTemplateSwedish, answerTemplateEnglish, languageDetectionTemplate } from "@chatbot-app/templates";
 import { llm } from "@chatbot-app/llm";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { validateLanguage } from "@chatbot-app/language-validator";
@@ -12,6 +12,8 @@ const combineDocuments = (docs) => {
 
 // Enkel chat history storage
 let chatHistory = [];
+
+
 
 // Funktion för att rensa minnet
 export const clearMemory = () => {
@@ -111,19 +113,19 @@ export const chain = RunnableSequence.from([
             console.log("Detected language:", input.detectedLanguage);
 
             const language = input.detectedLanguage || "svenska";
-            console.log("Final language used for answerTemplate:", language);
+            console.log("Final language:", language);
+
+            // Välj rätt template baserat på språk
+            const template = (language === 'english') ? answerTemplateEnglish : answerTemplateSwedish;
+            console.log("Using template:", language === 'english' ? 'English' : 'Swedish');
 
             // Formatera prompt för LLM
-            const promptText = await answerTemplate.format({
+            const promptText = await template.format({
                 context: input.context,
                 question: input.standaloneQuestion,
-                language,
                 chat_history: input.chat_history
             });
 
-            // console.log("Language parameter in answerTemplate prompt:", language);
-            // console.log("Generated prompt snippet:", promptText.slice(0, 200) + "...");
-            
             const answerResponse = await llm.invoke(promptText);
 
             // Spara i chat history

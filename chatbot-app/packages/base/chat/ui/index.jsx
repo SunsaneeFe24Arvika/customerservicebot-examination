@@ -36,7 +36,7 @@ export const Chat = forwardRef(({ showWelcome = true }, ref) => {
             <section className="chat__messages">
                 {messageComponents}
                 {loading && <Loading />}
-                {/* Invisible element för att scrolla till */}
+               
                 <div ref={messagesEndRef} />
             </section>
 
